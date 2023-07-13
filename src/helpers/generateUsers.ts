@@ -1,4 +1,4 @@
-import User from '../types/users/user'
+import User from '../types/users/users';
 
 // Функция по генерации любого количества гонщиков с рандомными показателями
 const generateUsers = (count: number): User[] => {
@@ -6,7 +6,7 @@ const generateUsers = (count: number): User[] => {
 
   const avatar = 'images/pilot.svg';
 
-  for(let i = 0; i < count; i ++){
+  for (let i = 0; i < count; i += 1) {
     const name = getRandomName();
     const maxSpeed = Math.round(Math.random() * (300 - 200) + 200);
     const raceTime = getRandomTime();
@@ -16,16 +16,16 @@ const generateUsers = (count: number): User[] => {
 
     const user: User = {
       id,
-      name, 
+      name,
       maxSpeed,
       raceTime,
       penaltyTime,
       rating,
       avatar,
     };
-    users.push(user)
+    users.push(user);
   }
-  return users
+  return users;
 };
 
 const getRandomName = (): string => {
@@ -43,9 +43,11 @@ const getRandomTime = (): string => {
   const hours: number = Math.floor(Math.random() * 24);
   const minutes: number = Math.floor(Math.random() * 60);
   const seconds: number = Math.floor(Math.random() * 60);
+
   const formattedHours: string = hours < 10 ? `0${hours}` : `${hours}`;
   const formattedMinutes: string = minutes < 10 ? `0${minutes}` : `${minutes}`;
   const formattedSeconds: string = seconds < 10 ? `0${seconds}` : `${seconds}`;
+
   return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
 };
 

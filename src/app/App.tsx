@@ -1,11 +1,11 @@
-import { FC } from 'react'
-import UserList from '../components/UserList/UserList'
+import { FC } from 'react';
+import UserList from '../components/UserList/UserList';
 
 const App: FC = () => {
-  return(
-    <div>
-      <UserList/>
-    </div>
+  return (
+   <div>
+     <UserList />
+   </div>
   );
 };
 
